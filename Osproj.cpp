@@ -1,5 +1,4 @@
-Objective: A program to simulate the priority CPU scheduling algorithm
-PROGRAM:
+
 #include<stdio.h>
 #include<conio.h>
 #include<string.h>
@@ -10,6 +9,7 @@ int totwt=0,totta=0;
 float awt,ata;
 char pn[10][10],t[10];
 clrscr();
+  
 printf("Enter the number of process:");
 scanf("%d",&n);
 for(i=0;i<n;i++)
@@ -21,6 +21,23 @@ scanf("%s%d%d%d",pn[i],&at[i],&et[i],&p[i]);
 for(i=0;i<n;i++)
 for(j=0;j<n;j++)
 {
+  	if(p[i]==p[j])
+	{
+	if(at[i]<at[j])
+	{
+		 temp=at[i];
+		  at[i]=at[j];
+	   	at[j]=temp;
+		
+	     temp=et[i];
+        et[i]=et[j];
+        et[j]=temp;	
+ strcpy(t,pn[i]);
+strcpy(pn[i],pn[j]);
+strcpy(pn[j],t);
+	}
+	}
+  
 if(p[i]<p[j])
 {
 temp=p[i];
@@ -64,20 +81,8 @@ printf("\n%s\t%5d\t\t%5d\t\t%5d\t\t%5d\t\t%5d",pn[i],at[i],et[i],p[i],wt[i],ta[i
 printf("\nAverage waiting time is:%f",awt);
 printf("\nAverage turnaroundtime is:%f",ata);
 getch();
+  
 }
-OUTPUT:
-Input:
-Enter the number of processes: 3
-Enter the Process Name, Arrival Time, execution time & priority: 1 2 3 1
-Enter the Process Name, Arrival Time, execution time & priority: 2 4 5 2
-Enter the Process Name, Arrival Time, execution time & priority: 3 5 6 3
-Output:
-Pname arrivaltime executiontime priority waitingtime tatime
-1  2 3  1 0 3
-2  4 5  2 1 6
-3 5 6  3 5 11
-Average Waiting Time: 2.0000
-Average Turn Around Time: 6.6667
 
 
 
