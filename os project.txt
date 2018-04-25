@@ -1,5 +1,4 @@
-Objective: A program to simulate the priority CPU scheduling algorithm
-PROGRAM:
+
 #include<stdio.h>
 #include<conio.h>
 #include<string.h>
@@ -65,18 +64,5 @@ printf("\nAverage waiting time is:%f",awt);
 printf("\nAverage turnaroundtime is:%f",ata);
 getch();
 }
-OUTPUT:
-Input:
-Enter the number of processes: 3
-Enter the Process Name, Arrival Time, execution time & priority: 1 2 3 1
-Enter the Process Name, Arrival Time, execution time & priority: 2 4 5 2
-Enter the Process Name, Arrival Time, execution time & priority: 3 5 6 3
-Output:
-Pname arrivaltime executiontime priority waitingtime tatime
-1  2 3  1 0 3
-2  4 5  2 1 6
-3 5 6  3 5 11
-Average Waiting Time: 2.0000
-Average Turn Around Time: 6.6667
 
 
